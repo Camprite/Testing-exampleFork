@@ -1,5 +1,6 @@
 package com.learning.courses.dto;
 
+import com.learning.courses.model.Contact;
 import com.learning.courses.model.enums.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
@@ -34,4 +35,5 @@ public class CreatePersonDTO implements Serializable {
   @NotNull
   @Schema(example = "TUTOR")
   protected Role role;
+
 }
