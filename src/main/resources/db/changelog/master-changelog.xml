@@ -21,5 +21,51 @@
              splitStatements="true"
              stripComments="true"/>
   </changeSet>
+  <changeSet id="02-add-contact" author="system">
+    <sqlFile dbms="postgresql"
+             encoding="utf8"
+             endDelimiter=";"
+             path="02-add-contact.sql"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"/>
+  </changeSet>
+  <changeSet id="03-add-person-contact" author="system">
+    <sqlFile dbms="postgresql"
+             encoding="utf8"
+             endDelimiter=";"
+             path="03-add-person-contact.sql"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"/>
+  </changeSet>
+  <changeSet id="04-contact-alter" author="system">
+    <sqlFile dbms="postgresql"
+             encoding="utf8"
+             endDelimiter=";"
+             path="04-contact-alter.sql"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"/>
+  </changeSet>
+  <changeSet id="05-contact-alter2" author="system">
+    <sqlFile dbms="postgresql"
+             encoding="utf8"
+             endDelimiter=";"
+             path="05-contact-alter2.sql"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"/>
+  </changeSet>
+
+  <changeSet id="06-contact-delete-columns" author="system">
+    <sqlFile dbms="postgresql"
+             encoding="utf8"
+             endDelimiter=";"
+             path="06-contact-delete-columns.sql"
+             relativeToChangelogFile="true"
+             splitStatements="true"
+             stripComments="true"/>
+  </changeSet>
 
 </databaseChangeLog>

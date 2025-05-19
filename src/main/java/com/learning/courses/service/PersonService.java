@@ -1,9 +1,11 @@
 package com.learning.courses.service;
 
+import com.learning.courses.dto.CreateContactDTO;
 import com.learning.courses.dto.CreatePersonDTO;
 import com.learning.courses.dto.PersonDTO;
 import com.learning.courses.exception.EntityNotFoundException;
 import com.learning.courses.mapper.PersonMapper;
+import com.learning.courses.model.Contact;
 import com.learning.courses.model.Person;
 import com.learning.courses.repository.PersonRepository;
 import jakarta.validation.constraints.NotNull;
@@ -32,6 +34,14 @@ public class PersonService {
         .map(personMapper::toDTO)
         .orElseThrow(() -> new EntityNotFoundException(id, Person.class.getSimpleName()));
   }
+//  @Transactional(readOnly = true)
+//  public PersonDTO getPersonContacts(@NotNull @Positive Long id) {
+//    PersonDTO person = personRepository.findById(id);
+////    person.get
+//    return person;
+//        .map(personMapper::toDTO)
+//        .orElseThrow(() -> new EntityNotFoundException(id, Person.class.getSimpleName()));
+//  }
 
   @Transactional(readOnly = true)
   public Person getPersonEntity(@NotNull @Positive Long id) {
@@ -49,5 +59,7 @@ public class PersonService {
     person = personRepository.save(person);
     return personMapper.toDTO(person);
   }
+
+
 
 }

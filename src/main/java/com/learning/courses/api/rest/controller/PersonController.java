@@ -31,6 +31,11 @@ class PersonController {
   public PersonDTO getPerson(@PathVariable Long id) {
     return personService.getPerson(id);
   }
+//  @GetMapping("/{id}")
+//  @Operation(summary = "Get person contacts")
+//  public PersonDTO getPersonContacts(@PathVariable Long id) {
+//    return personService.getPersonContacts(id);
+//  }
 
   @PutMapping("/{id}")
   @Operation(summary = "Update person")

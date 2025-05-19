@@ -28,11 +28,14 @@ public class CourseService {
     @Transactional
     public Long createCourse(CreateCourseDTO createCourseDTO) {
         final Course course = courseMapper.toEntity(createCourseDTO);
-        var tutor = personService.getPersonEntity(createCourseDTO.getTutorId());
-        if (tutor.getRole() != Role.TUTOR) {
-            throw new InvalidRoleException(createCourseDTO.getTutorId(), Role.TUTOR, tutor.getRole());
-        }
         return courseRepository.save(course).getId();
+
+
+//        var tutor = personService.getPersonEntity(createCourseDTO.getTutorId());
+//        if (tutor.getRole() != Role.TUTOR) {
+//            throw new InvalidRoleException(createCourseDTO.getTutorId(), Role.TUTOR, tutor.getRole());
+//        }
+//        return courseRepository.save(course).getId();
     }
 
     @Transactional(readOnly = true)
